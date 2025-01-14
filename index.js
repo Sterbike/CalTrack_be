@@ -17,9 +17,9 @@ app.use(bodyParser.json());
 connectDB();
 
 //routes
-app.use('/auth', authRoutes);
-app.use('/recipes', recipeRoutes);
-app.use('/meals', mealRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/recipes', recipeRoutes);
+app.use('/api/meals', mealRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
