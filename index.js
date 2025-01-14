@@ -3,15 +3,14 @@ const cors = require('cors');
 const connectDB = require('./mongo');
 const bodyParser = require('body-parser');
 
+const PORT = process.env.PORT || 5000;
+const app = express();
+app.use(cors());
 //import routes
 const authRoutes = require('./Routes/auth');
 const recipeRoutes = require('./Routes/recipes')
 const mealRoutes = require('./Routes/meals'); 
 
-const PORT = process.env.PORT || 5000;
-const app = express();
-
-app.use(cors());
 app.use(bodyParser.json());
 
 connectDB();
