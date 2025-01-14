@@ -15,8 +15,8 @@ exports.register = async (req, res) => {
     await user.save();
 
     // Token generálása
-    const accesstoken = user.generateAccessToken();
-    const refreshToken = user.generateRefreshToken();
+    const accesstoken = await user.generateAccessToken();
+    const refreshToken = await user.generateRefreshToken();
 
     res
       .status(200)
